@@ -37,6 +37,19 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "deb54106-7a10-456e-9731-c596ba1ef533"
+      }
+    },
+    "owner": "hollow_cj",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/deb54106-7a10-456e-9731-c596ba1ef533"
     }
   }
 }
