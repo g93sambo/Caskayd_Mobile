@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  Platform,
-  KeyboardAvoidingView,
-  ScrollView,
-} from "react-native";
+import {View,TouchableOpacity,StyleSheet,Platform,KeyboardAvoidingView,ScrollView,} from "react-native";
 import { AntDesign, Ionicons } from "@expo/vector-icons";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -152,7 +145,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-
     elevation: 3,
   },
   sub3: {
