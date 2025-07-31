@@ -37,7 +37,7 @@ const SignUpScreenCreator2 = () => {
 
     setTimeout(() => {
       setLoading(false);
-      router.push('/SignUpCreator3');
+      router.push('/SignUpLightCreator3/SignUpCreator3');
     }, 1500);
   };
 

@@ -83,7 +83,7 @@ const SignUpScreenCreator3 = () => {
       </View>
 
       {/* Sign Up Button */}
-      <TouchableOpacity style={styles.signUpButton} onPress={() => {router.push('/ConnectAccount')}}>
+      <TouchableOpacity style={styles.signUpButton} onPress={() => {router.push('/ConnectAccountPage/ConnectAccount')}}>
         <Text style={styles.signUpText}>Sign Up</Text>
       </TouchableOpacity>
                             </View>

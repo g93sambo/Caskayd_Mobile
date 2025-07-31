@@ -32,7 +32,7 @@ export default function Aftersplash() {
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
-      router.replace('/'); // replace with your dashboard route
+      router.replace('/homepage'); // replace with your dashboard route
     }, 1500);
   };
 

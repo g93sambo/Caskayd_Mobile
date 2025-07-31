@@ -128,6 +128,7 @@ const ConnectAccount = () => {
               isAnyConnected && styles.continueButtonActive,
             ]}
             disabled={!isAnyConnected}
+            onPress={() => {router.replace('/homepage')}}
           >
             <Text style={styles.continueText}>Continue</Text>
           </TouchableOpacity>

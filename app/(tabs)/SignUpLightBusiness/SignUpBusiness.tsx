@@ -51,7 +51,7 @@ const handleSignUp = () => {
       password,
     };
     //console.log('User Data:', userData);
-    router.push('/aftersplash'); 
+    router.push('/AfterSplashLight/aftersplash'); 
   }, 1500);
 };
 
@@ -114,7 +114,7 @@ const handleSignUp = () => {
 
           <Text style={styles.loginText}>
             Already have an account?{' '}
-            <Text style={styles.loginLink} onPress={() => router.push( {pathname:'/login', params: {type}})}>
+            <Text style={styles.loginLink} onPress={() => router.push( {pathname:'/LogInLight/login', params: {type}})}>
               Log In
             </Text>
           </Text>

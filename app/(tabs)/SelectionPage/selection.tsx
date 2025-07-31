@@ -1,9 +1,11 @@
 //This is the selection screen
 import { useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useState,useCallback } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 import {View,Text,StyleSheet,TouchableOpacity,Modal,TextInput,KeyboardAvoidingView,ScrollView,Platform,TouchableWithoutFeedback,Keyboard,useWindowDimensions,} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const SelectionScreen = () => {
   const router = useRouter();
@@ -12,6 +14,15 @@ const SelectionScreen = () => {
   const [loading, setLoading] = useState(false);
 
   const { width, height } = useWindowDimensions();
+
+   useFocusEffect(
+    useCallback(() => {
+      setModalVisible(false);
+      setBusinessName('');
+      setLoading(false);
+      return () => {};
+    }, [])
+  );
 
   return (
     <View style={styles.container}>
@@ -39,21 +50,27 @@ const SelectionScreen = () => {
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={() => setModalVisible(true)}>
-          <Text style={styles.buttonText}>I`m a Business</Text>
-        </TouchableOpacity>
+  <View style={styles.buttonContent}>
+    <FontAwesome5 name="briefcase" size={20} color="#fff" style={styles.icon} />
+    <Text style={styles.buttonText}>I`m a Business</Text>
+  </View>
+</TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            const type = 'creator';
-            router.push({
-              pathname: '/SignUpCreator1',
-              params: { type },
-            });
-          }}
-        >
-          <Text style={styles.buttonText}>I`m a Creator</Text>
-        </TouchableOpacity>
+<TouchableOpacity
+  style={styles.button}
+  onPress={() => {
+    const type = 'creator';
+    router.push({
+      pathname: '/SignUpLightCreator1/SignUpCreator1',
+      params: { type },
+    });
+  }}
+>
+  <View style={styles.buttonContent}>
+    <FontAwesome5 name="palette" size={20} color="#fff" style={styles.icon} />
+    <Text style={styles.buttonText}>I`m a Creator</Text>
+  </View>
+</TouchableOpacity>
       </View>
 
       <Modal transparent animationType="slide" visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
@@ -78,8 +95,9 @@ const SelectionScreen = () => {
                     setLoading(true);
                     const type = 'business';
                     const name = businessName.trim();
+                    setModalVisible(false);
                     router.push({
-                      pathname: '/SignUpBusiness',
+                      pathname: '/SignUpLightBusiness/SignUpBusiness',
                       params: { type, name },
                     });
                   }}
@@ -132,6 +150,11 @@ const styles = StyleSheet.create({
     width: '100%',
     gap: 16,
   },
+  buttonContent: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+},
   button: {
     marginHorizontal: 10,
     width: '80%',
@@ -147,6 +170,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
   },
+  icon: {
+  marginRight: 8,
+},
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.5)',

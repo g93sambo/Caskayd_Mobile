@@ -37,7 +37,7 @@ const SignInScreen = () => {
         password,
       };
       //console.log('User Data:', userData);
-      router.replace('/aftersplash'); 
+      router.replace('/homepage'); 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setErrorMsg('Something went wrong. Try again.');

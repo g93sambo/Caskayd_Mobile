@@ -40,7 +40,7 @@ const SignUpScreenCreator1 = () => {
       password,
     };
     console.log('User Data:', userData);
-    router.push('/SignUpCreator2');
+    router.push('/SignUpLightCreator2/SignUpCreator2');
   }, 1500);
 };
 
@@ -102,7 +102,7 @@ return(
                 
                           <Text style={styles.loginText}>
                             Already have an account?{' '}
-                            <Text style={styles.loginLink} onPress={() => router.push( {pathname:'/login', params: {type}})}>
+                            <Text style={styles.loginLink} onPress={() => router.push( {pathname:'/LogInLight/login', params: {type}})}>
                               login
                             </Text>
                           </Text>

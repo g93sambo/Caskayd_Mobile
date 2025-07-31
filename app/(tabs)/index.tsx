@@ -66,7 +66,7 @@ const SplashScreen: React.FC = () => {
       Animated.parallel(animations).start();
 
       setTimeout(() => {
-        router.replace('/selection');
+        router.replace("/SelectionPage/selection");
       }, 2800);
     }, 300);
 
