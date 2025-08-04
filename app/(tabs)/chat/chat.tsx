@@ -1,10 +1,20 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const ChatPage = () => {
     return (
-        <View>
-            <Text>This is the chat page</Text>
-        </View>
+        <ScrollView style={styles.container}>
+            <View>
+                <Text>Caskayd</Text>
+            </View>
+        </ScrollView>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#ffffff',
+    }});
+
+export default ChatPage;
